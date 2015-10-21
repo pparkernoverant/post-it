@@ -17360,3 +17360,7 @@ Processing by PostsController#show as HTML
   Rendered layouts/_navigation.html.erb (3.3ms)
   Rendered layouts/_messages.html.erb (0.1ms)
 Completed 200 OK in 32ms (Views: 28.9ms | ActiveRecord: 1.6ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
