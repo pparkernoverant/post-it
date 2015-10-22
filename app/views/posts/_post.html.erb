@@ -4,7 +4,7 @@
 			<i class="icon-arrow-up"></i>
 		<% end %>
 		<div class="text-center">
-			<span id="post_<%= post.id %>_votes">score: <%= post.total_votes %></span>
+			<span id="post_<%= post.slug %>_votes">score: <%= post.total_votes %></span>
 		</div>
 		<%= link_to vote_post_path(post, vote: false), method: 'post', remote: true do %>
 			<i class="icon-arrow-down"></i>
