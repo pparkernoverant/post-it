@@ -26,7 +26,7 @@ class User < ActiveRecord::Base
       user = User.find_by slug: slug_current
       count += 1
     end
-    slug_current
+    self.slug = slug_current
   end
 
   def to_slug(name)

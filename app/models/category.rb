@@ -21,7 +21,7 @@ class Category < ActiveRecord::Base
       category = Category.find_by slug: slug_current
       count += 1
     end
-    slug_current
+    self.slug = slug_current
   end
 
   def to_slug(name)
