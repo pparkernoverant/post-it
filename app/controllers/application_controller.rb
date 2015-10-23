@@ -13,21 +13,24 @@ class ApplicationController < ActionController::Base
     !!current_user
   end
 
+  def current_is_creator?(obj)
+    logged_in? && (obj.user == current_user || current_user.admin?)
+  end
+
   def require_user
-    if !logged_in?
-      flash[:error] = 'Must be logged in to do that.'
-      redirect_to root_path
-    end
+    access_denied unless logged_in?
   end
 
   def require_creator(obj)
-    if !current_is_creator?(obj)
-      flash[:error] = 'Must be creator to do that.'
-      redirect_to root_path
-    end
+    access_denied unless current_is_creator?(obj)
   end
 
-  def current_is_creator?(obj)
-    obj.user == current_user
+  def require_admin
+    access_denied unless logged_in? && current_user.admin?
+  end
+
+  def access_denied
+    flash[:error] = 'You do not have permission to do that.'
+    redirect_to root_path
   end
 end
